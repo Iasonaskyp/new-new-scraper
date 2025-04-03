@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: funnel-scraper
+    env: docker
+    plan: starter
