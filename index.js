@@ -27,8 +27,11 @@ app.post('/scrape', async (req, res) => {
       const walk = (node) => {
         return {
           tag: node.tagName,
-          id: node.id,
-          class: node.className,
+          id: node.id || null,
+          class: node.className || null,
+          text: node.innerText || null,
+          src: node.src || null,
+          href: node.href || null,
           children: Array.from(node.children || []).map(walk)
         };
       };
